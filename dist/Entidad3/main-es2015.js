@@ -2033,15 +2033,7 @@ let WorldStateComponent = class WorldStateComponent {
         });
     }
     queryChannelAll() {
-        this.getLastKeyAll();
-        let lastIdx;
-        if (this.channelall_lastKey == "") {
-            lastIdx = "9";
-        }
-        else {
-            lastIdx = this.channelall_lastKey;
-        }
-        this._blockService.queryTransactions("channelall", "1", lastIdx).subscribe((datos) => {
+        this._blockService.queryTransactions("channelall", "1", "99").subscribe((datos) => {
             console.log(JSON.parse(datos.response));
             this.channelall = JSON.parse(datos.response);
         });
