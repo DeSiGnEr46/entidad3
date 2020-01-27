@@ -3502,16 +3502,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function queryChannel13() {
           var _this25 = this;
 
-          this.getLastKey13();
-          var lastIdx;
-
-          if (this.channel13_lastKey == "") {
-            lastIdx = "9";
-          } else {
-            lastIdx = this.channel13_lastKey;
-          }
-
-          this._blockService.queryTransactions("channel13", "1", lastIdx).subscribe(function (datos) {
+          this._blockService.queryTransactions("channel13", "1", "99").subscribe(function (datos) {
             console.log(JSON.parse(datos.response));
             _this25.channel13 = JSON.parse(datos.response);
           });

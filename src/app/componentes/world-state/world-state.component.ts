@@ -61,15 +61,7 @@ export class WorldStateComponent implements OnInit {
   }
 
   queryChannel13(): any{
-    this.getLastKey13();
-
-    let lastIdx;
-    if(this.channel13_lastKey == ""){
-      lastIdx = "9";
-    }else{
-      lastIdx = this.channel13_lastKey;
-    }
-    this._blockService.queryTransactions("channel13","1",lastIdx).subscribe((datos) => {
+    this._blockService.queryTransactions("channel13","1","99").subscribe((datos) => {
       console.log(JSON.parse(datos.response));
       this.channel13 = JSON.parse(datos.response);
     })
